@@ -163,10 +163,11 @@ export default function DoctorSelection() {
     }
 
     return list;
-  }, [searchText, selectedFilter, placeFilter]);
+  }, [searchText, selectedFilter, placeFilter, selectedCategory]);
 
   return (
     <div className={styles.container}>
+      {/* Category Buttons with Scroll */}
       <div className={styles.categoryContainer}>
         <button onClick={() => handleScroll("left")} className={styles.arrowBtn}>
           <FaArrowLeft />
@@ -174,9 +175,19 @@ export default function DoctorSelection() {
 
         <div className={styles.categoryList}>
           {categories.slice(scrollIndex, scrollIndex + 5).map((category, index) => (
-            <div key={index} className={styles.categoryItem}>
+            <button
+              key={index}
+              className={`${styles.categoryItem} ${
+                selectedCategory === category ? styles.activeCategory : ""
+              }`}
+              onClick={() =>
+                setSelectedCategory(
+                  selectedCategory === category ? "" : category
+                )
+              }
+            >
               {category}
-            </div>
+            </button>
           ))}
         </div>
 
@@ -185,6 +196,7 @@ export default function DoctorSelection() {
         </button>
       </div>
 
+      {/* Search + Filters */}
       <div className={styles.searchFilterRow}>
         <input
           className={styles.searchInput}
@@ -222,6 +234,7 @@ export default function DoctorSelection() {
         </div>
       </div>
 
+      {/* Doctors Card Grid */}
       <div className={styles.cardGrid}>
         {filteredDoctors.map((doc, i) => (
           <div key={i} className={styles.card}>
