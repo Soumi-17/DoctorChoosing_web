@@ -2,20 +2,24 @@ import React, { useMemo, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import styles from "./DoctorSelection.module.css";
 
+
+// Updated categories to be an array of objects with names and images
 const categories = [
-  "Cardiologist",
-  "Gynecologist",
-  "Gastrologist",
-  "Dermatologist",
-  "Neurologist",
-  "Pediatrician",
-  "Orthopedic",
-  "Psychiatrist",
-  "Dentist",
-  "Ophthalmologist",
+  { name: "Cardiologist", image: "https://www.creativehatti.com/wp-content/uploads/edd/2021/08/Heart-is-with-the-stethoscope-illustration-15-large.jpg" },
+  { name: "Gynecologist", image: "https://cdn.vectorstock.com/i/750p/34/11/cute-funny-smiling-woman-doctor-gynecologist-vector-31693411.avif" },
+  { name: "Gastrologist", image: "https://thumbs.dreamstime.com/b/cute-funny-smiling-doctor-healthy-happy-stomach-healthcare-medical-friends-concept-vector-flat-cartoon-character-icon-design-107253484.jpg" },
+  { name: "Dermatologist", image: "https://img.freepik.com/free-vector/hand-drawn-dermatologist-cartoon-illustration_23-2151046521.jpg" },
+  { name: "Neurologist", image: "https://png.pngtree.com/png-clipart/20250501/original/pngtree-neurologist-cartoon-illustration-png-image_20919084.png" },
+  { name: "Pediatrician", image: "https://img.freepik.com/premium-vector/cute-cartoon-doctor-caring-baby-vector-illustration_1176913-52046.jpg" },
+  { name: "Orthopedic", image: "https://media.istockphoto.com/id/1423372814/vector/traumatology-examines-and-bandages-childs-broken-leg-treatment-in-hospital.jpg?s=612x612&w=0&k=20&c=FZUUcVrwk5uWxqP0XmE0XsGrrfihhrjAC2-vaA9Y7F4=" },
+  { name: "Psychiatrist", image: "https://t3.ftcdn.net/jpg/03/18/69/08/360_F_318690807_1ZPs49OLKMoCOfKVwX7bQxuqvemqp1Og.jpg" },
+  { name: "Dentist", image: "https://www.shutterstock.com/image-vector/dentist-woman-holding-instruments-examining-600nw-1125740054.jpg" },
+  { name: "Ophthalmologist", image: "https://www.shutterstock.com/image-vector/oculist-checks-vision-woman-doctor-600nw-2180041341.jpg" },
 ];
 
+
 const doctors = [
+
   {
     name: "Sarah Anderson",
     designation: "Dentist",
@@ -149,7 +153,6 @@ export default function DoctorSelection() {
       );
     });
 
-    // Apply category filter if selected
     if (selectedCategory) {
       list = list.filter((d) => d.designation === selectedCategory);
     }
@@ -174,21 +177,25 @@ export default function DoctorSelection() {
         </button>
 
         <div className={styles.categoryList}>
-          {categories.slice(scrollIndex, scrollIndex + 5).map((category, index) => (
+
+          {/* Updated mapping logic for the new categories structure */}
+          {categories.slice(scrollIndex, scrollIndex + 5).map((category) => (
             <button
-              key={index}
+              key={category.name}
               className={`${styles.categoryItem} ${
-                selectedCategory === category ? styles.activeCategory : ""
+                selectedCategory === category.name ? styles.activeCategory : ""
               }`}
               onClick={() =>
                 setSelectedCategory(
-                  selectedCategory === category ? "" : category
+                  selectedCategory === category.name ? "" : category.name
                 )
               }
             >
-              {category}
+              <img src={category.image} alt={category.name} className={styles.categoryImage} />
+              <span className={styles.categoryName}>{category.name}</span>
             </button>
           ))}
+          {/* --- MODIFICATION END --- */}
         </div>
 
         <button onClick={() => handleScroll("right")} className={styles.arrowBtn}>
@@ -196,7 +203,8 @@ export default function DoctorSelection() {
         </button>
       </div>
 
-      {/* Search + Filters */}
+      {/* ... (Search, Filters, and Doctor Cards remain unchanged) ... */}
+       {/* Search + Filters */}
       <div className={styles.searchFilterRow}>
         <input
           className={styles.searchInput}
