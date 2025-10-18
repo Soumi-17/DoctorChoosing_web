@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* * {
+    margin: 0;
+    padding: 0;
+    color: white;
+    color-scheme: light dark;
+    
+    } */
+    
+.body_part{        
+    font-family: "Open Sans", sans-serif;
+    width: 100vw;
+    height: 93.3vh;
+    background-image: linear-gradient(19deg, rgb(0 0 0 / 0%), rgb(42, 41, 41));
+    /* background-color: rgba(0, 0, 0, 0.75); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 3rem;
+}
+
+.main_part{
+    width: 74rem;
+    height: 36rem;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.75);
+    /* background-image: linear-gradient(19deg, rgb(0 0 0 / 0%), rgb(42, 41, 41)); */
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left_part{
+    width: 29rem;
+    /* height: 35rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left_part_main{
+    width: 17rem;
+    height: 23rem;
+    background-image: linear-gradient(178deg, rgba(0, 0, 0, 0.19), rgb(0, 14, 5)), url(src/assets/images/agamani.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 13px;
+    border: 0.3px solid rgb(64, 64, 64);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 8px;
+    padding-left: 15px;
+    padding-bottom: 19px;
+}
+
+.left_part_primary{
+    display: flex;
+    gap: 23px;
+}
+
+.left_part_primary_sec{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.left_part_first{
+    font-size: 25px;
+    font-weight: 700;
+    color: #4b9b6e;
+
+}
+
+.left_part_sec{
+    font-size: 15px;
+    font-weight: 800;
+    color: rgb(204, 204, 204);
+
+}
+
+.left_part_third{
+    font-size: 14px;
+    font-weight: 700;
+    color: #4b9b6e;
+
+}
+
+.left_part_fourth{
+    font-size: 13px;
+    font-weight: 800;
+    color: rgb(204, 204, 204);
+}
+
+.right_part{
+    width: 39rem;
+    /* height: 37rem; */
+    margin-right: 1.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 29px;
+}
+
+.right_part_upper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.right_part_divs{
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.right_part_firstspan{
+    font-size: 15px;
+    font-weight: 600;
+    color: #6bbf8a;
+}
+
+.right_part_secspan{
+    font-size: 14px;
+    width: 279px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 11px;
+    border-radius: 7px;
+    background-color: rgba(142, 142, 142, 0.391);
+    color: rgb(204, 204, 204);
+    cursor: pointer;
+}
+
+.right_part_divs_button{
+    width: 122px;
+    height: 43px;
+    background-color: #4b9b6e;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    margin-top: 3px;
+    cursor: pointer;
+    transition: all 250ms ease-in;
+}
+
+.right_part_divs_button:hover{
+    border: 2px solid #4b9b6e;
+    color: #4b9b6e;
+    background: none;
+}
